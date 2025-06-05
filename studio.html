@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>现代化设计工作室 - 浙江大学工业设计系</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Microsoft YaHei", sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background-color: #f5f5f5;
+        overflow-x: hidden;
+      }
+
+      .header {
+        position: relative;
+        height: 50vh;
+        background: linear-gradient(
+          135deg,
+          rgba(30, 55, 153, 0.8) 0%,
+          rgba(12, 36, 97, 0.8) 100%
+        );
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        overflow: hidden;
+      }
+
+      .header-content {
+        position: relative;
+        z-index: 2;
+      }
+
+      .header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      }
+
+      .header p {
+        font-size: 1.2rem;
+        max-width: 800px;
+        margin: 0 auto;
+        opacity: 0.9;
+      }
+
+      /* 添加粒子画布样式 */
+      #particles-canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 50vh; /* 与header高度一致 */
+        z-index: 1;
+        pointer-events: none;
+      }
+
+      .header-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.4;
+        z-index: 0;
+      }
+
+      .studio-features {
+        padding: 4rem 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      .feature-card {
+        background: white;
+        border-radius: 15px;
+        padding: 2rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+        cursor: pointer;
+      }
+
+      .feature-card:hover {
+        transform: translateY(-10px);
+      }
+
+      .feature-icon {
+        width: 60px;
+        height: 60px;
+        background: #1e3799;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+        color: white;
+        font-size: 24px;
+      }
+
+      .feature-card h3 {
+        color: #1e3799;
+        margin-bottom: 1rem;
+      }
+
+      .equipment-section {
+        background: #e8f4f8;
+        padding: 4rem 2rem;
+      }
+
+      .equipment-grid {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+      }
+
+      .equipment-item {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .equipment-image {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+
+      .equipment-info {
+        padding: 1.5rem;
+      }
+
+      .section-title {
+        text-align: center;
+        color: #1e3799;
+        margin-bottom: 3rem;
+        font-size: 2rem;
+      }
+
+      .back-button {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        background: #1e3799;
+        color: white;
+        border: none;
+        padding: 1rem 2rem;
+        border-radius: 30px;
+        cursor: pointer;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        text-decoration: none;
+        font-size: 1rem;
+      }
+
+      .back-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+      }
+
+      @media (max-width: 768px) {
+        .header h1 {
+          font-size: 2rem;
+        }
+
+        .studio-features {
+          padding: 2rem 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="particles-canvas"></canvas>
+    <header class="header">
+      <img
+        src="./images/studio-header.jpg"
+        alt="设计工作室全景"
+        class="header-bg"
+      />
+      <div class="header-content">
+        <h1>现代化设计工作室</h1>
+        <p>集创意、科技与艺术于一体的专业设计空间</p>
+      </div>
+    </header>
+
+    <section class="studio-features">
+      <div class="feature-card">
+        <div class="feature-icon">🎨</div>
+        <h3>创意空间</h3>
+        <p>
+          开放式的工作环境，激发创意灵感，促进团队协作与交流。配备智能照明系统和可调节工作台，为设计师提供舒适的工作环境。
+        </p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">💻</div>
+        <h3>数字工具</h3>
+        <p>
+          配备最新的设计软件和高性能工作站，支持3D建模、渲染、动画制作等专业设计工作。提供大尺寸显示器和数位板等设计装备。
+        </p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🛠️</div>
+        <h3>原型工坊</h3>
+        <p>
+          配备3D打印机、激光切割机等快速成型设备，支持设计方案的快速验证和优化。提供各类手工工具和材料供学生使用。
+        </p>
+      </div>
+    </section>
+
+    <section class="equipment-section">
+      <h2 class="section-title">专业设备</h2>
+      <div class="equipment-grid">
+        <div class="equipment-item">
+          <img
+            src="./images/3d-printer.jpg"
+            alt="3D打印机"
+            class="equipment-image"
+          />
+          <div class="equipment-info">
+            <h3>3D打印实验室</h3>
+            <p>
+              配备多台工业级3D打印机，支持多种材料打印，可快速制作产品原型。
+            </p>
+          </div>
+        </div>
+        <div class="equipment-item">
+          <img
+            src="./images/cad-station.jpg"
+            alt="CAD工作站"
+            class="equipment-image"
+          />
+          <div class="equipment-info">
+            <h3>CAD/CAM工作站</h3>
+            <p>
+              高性能图形工作站，搭载专业设计软件，支持复杂的3D建模和仿真分析。
+            </p>
+          </div>
+        </div>
+        <div class="equipment-item">
+          <img
+            src="./images/vr-equipment.jpg"
+            alt="VR设备"
+            class="equipment-image"
+          />
+          <div class="equipment-info">
+            <h3>VR/AR实验室</h3>
+            <p>虚拟现实和增强现实设备，用于产品交互设计和用户体验研究。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <a href="index.html" class="back-button">返回主页</a>
+
+    <script src="js/particles.js"></script>
+    <script>
+      // 初始化粒子效果
+      document.addEventListener("DOMContentLoaded", () => {
+        new ParticleNetwork("particles-canvas");
+      });
+    </script>
+  </body>
+</html>

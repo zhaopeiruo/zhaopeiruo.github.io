@@ -1,0 +1,443 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Microsoft YaHei", sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f5f5f5;
+}
+
+header {
+  position: relative;
+  overflow: hidden;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: linear-gradient(
+    135deg,
+    rgba(30, 55, 153, 0.7) 0%,
+    rgba(12, 36, 97, 0.7) 100%
+  );
+}
+title {
+  color: aliceblue;
+}
+.hero-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: aliceblue;
+  text-align: center;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  color: aliceblue;
+  text-align: center;
+}
+
+.hero-image {
+  width: 100%;
+  height: 60vh;
+  object-fit: cover;
+  opacity: 0.8;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+/* 修改时间轴样式 */
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 4rem 2rem 2rem; /* 增加顶部内边距，为标题腾出空间 */
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  width: 2px; /* 减小宽度 */
+  background-image: linear-gradient(
+    to bottom,
+    #1e3799 25%,
+    transparent 25%,
+    transparent 75%,
+    #1e3799 75%
+  );
+  background-size: 2px 16px; /* 控制点的大小和间距 */
+  top: 120px; /* 调整起始位置，避开标题 */
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.timeline-item {
+  padding: 2rem 0;
+  width: 100%;
+  position: relative;
+}
+
+.timeline-content {
+  position: relative;
+  width: 45%;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.6s ease; /* 增加过渡时间 */
+  cursor: pointer;
+  z-index: 3; /* 确保内容卡片在最上层 */
+}
+
+.timeline-content:hover {
+  transform: translateY(-5px);
+}
+
+.timeline-item:nth-child(odd) .timeline-content {
+  left: 55%;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+  left: 0;
+}
+
+.timeline-title {
+  font-size: 1.2rem;
+  color: #1e3799;
+  margin-bottom: 1rem;
+}
+
+/* 教师评价区域 */
+.testimonials {
+  background: white;
+  padding: 4rem 2rem;
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.testimonial-card {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.professor-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.professor-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.professor-details {
+  flex: 1;
+}
+
+.professor-title {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* 资源推荐区域 */
+.resources {
+  padding: 4rem 2rem;
+  background: #e8f4f8;
+}
+
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.resource-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.resource-card:hover {
+  transform: translateY(-5px);
+}
+
+.resource-card ul,
+.course-details ul {
+  list-style-position: outside; /* 将点放在文本区域外 */
+  list-style-type: disc;
+  padding-left: 1.2em;
+  margin: 0.5rem 0;
+}
+
+.resource-card li,
+.course-details li {
+  padding: 0.3rem 0;
+  line-height: 1.5;
+  margin-left: 0; /* 移除额外的左边距 */
+  text-indent: 0; /* 移除文本缩进 */
+}
+
+/* 移除之前的自定义点样式 */
+.course-details ul li::before,
+.resource-card ul li::before {
+  content: none;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #1e3799;
+  position: relative; /* 确保标题在正确的层级 */
+  z-index: 3;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+footer {
+  background: #1e3799;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  margin-top: 2rem;
+}
+
+/* 添加课程详情样式 */
+.course-details {
+  display: none;
+  background: #f8f9fa;
+  padding-top: 10rem;
+  padding: 1rem;
+  border-radius: 4px;
+  border-left: 4px solid #1e3799;
+  position: relative;
+  z-index: 4; /* 确保展开的详情在最上层 */
+}
+
+.course-details ul {
+  list-style-position: inside; /* 将列表符号放在内容区域内 */
+  padding-left: 0; /* 移除默认的左侧padding */
+}
+
+.course-details li {
+  padding-left: 1.2em; /* 为列表项添加左侧间距 */
+  text-indent: -1.2em; /* 使用负缩进将列表符号向左移动 */
+}
+
+.course-details.active {
+  display: block;
+  animation: slideDown 0.8s ease-out; /* 增加动画时间 */
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.expand-icon {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
+}
+
+.expand-icon::before {
+  width: 2px;
+  height: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.expand-icon::after {
+  width: 100%;
+  height: 2px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.timeline-content.active .expand-icon::before {
+  transform: translateX(-50%) rotate(90deg);
+}
+
+/* 添加新的样式 */
+#particles-canvas {
+  position: absolute; /* 改为absolute定位 */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60vh; /* 限制高度与header一致 */
+  z-index: 0;
+  pointer-events: none;
+}
+
+.image-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+  background: #fff;
+  margin: 2rem auto;
+  max-width: 1200px;
+  position: relative;
+  z-index: 1;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.8s ease; /* 增加过渡时间 */
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+.gallery-item-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  color: white;
+  transform: translateY(100%);
+  transition: transform 0.8s ease; /* 增加过渡时间 */
+}
+
+.gallery-item:hover .gallery-item-caption {
+  transform: translateY(0);
+}
+
+/* 添加滚动动画效果 */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease; /* 增加过渡时间 */
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 添加课程预览图样式 */
+.course-preview {
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+    z-index: 10;
+}
+
+.timeline-item:nth-child(odd) .course-preview {
+    right: calc(100% + 80px); /* 增加右侧间距，从30px改为80px */
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+.timeline-item:nth-child(even) .course-preview {
+    left: calc(100% + 80px); /* 增加左侧间距，从30px改为80px */
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+.timeline-content:hover .course-preview {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(0, -50%);
+}
+
+.course-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.course-preview:hover img {
+    transform: scale(1.1);
+}
+
+/* 添加预览图说明文字 */
+.preview-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    color: white;
+    font-size: 0.9rem;
+}
+
+/* 响应式设计优化 */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .image-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline::before {
+    left: 31px;
+    top: 120px; /* 保持与桌面版一致 */
+  }
+
+  .timeline-content {
+    width: calc(100% - 90px);
+    left: 90px !important;
+  }
+}

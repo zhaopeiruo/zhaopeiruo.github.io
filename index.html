@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>浙江大学工业设计系</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <canvas id="particles-canvas"></canvas>
+    <header>
+      <img
+        src="./images/hero-bg.jpg"
+        alt="浙江大学工业设计系"
+        class="hero-image"
+      />
+      <h1 class="hero-title">浙江大学工业设计系</h1>
+      <p class="hero-subtitle">创新设计，智造未来</p>
+    </header>
+
+    <section class="image-gallery fade-in">
+      <div class="gallery-item">
+        <a href="studio.html" style="text-decoration: none; color: inherit;">
+          <img src="./images/studio.jpg" alt="设计工作室" />
+          <div class="gallery-item-caption">现代化设计工作室</div>
+        </a>
+      </div>
+      <div class="gallery-item">
+        <a href="works.html" style="text-decoration: none; color: inherit;">
+          <img src="./images/works.jpg" alt="学生作品展" />
+          <div class="gallery-item-caption">学生优秀作品展示</div>
+        </a>
+      </div>
+      <div class="gallery-item">
+        <a href="international.html" style="text-decoration: none; color: inherit;">
+          <img src="./images/international.jpg" alt="国际交流" />
+          <div class="gallery-item-caption">国际设计交流活动</div>
+        </a>
+      </div>
+    </section>
+
+    <section class="timeline">
+      <h2 class="section-title">专业课程体系</h2>
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <h3 class="timeline-title">设计基础</h3>
+          <p>
+            培养学生的基础造型能力和设计思维，包括素描、色彩、平面构成、立体构成等课程内容。
+          </p>
+          <div class="course-preview">
+            <img src="./images/design-basic.jpg" alt="设计基础课程" />
+            <div class="preview-caption">学生手绘训练与设计实践</div>
+          </div>
+          <div class="course-details">
+            <h4>课程信息</h4>
+            <p><strong>授课时间：</strong>大一上学期</p>
+            <p><strong>课程学分：</strong>4学分</p>
+            <p>
+              <strong>课程目标：</strong
+              >通过手绘训练和设计实践，培养学生对形态、色彩、材质的感知能力和表现能力，建立设计的基础认知。
+            </p>
+            <div class="course-content">
+              <p><strong>主要内容：</strong></p>
+              <ul>
+                <li>素描与速写技法</li>
+                <li>色彩理论与实践</li>
+                <li>平面构成原理</li>
+                <li>立体构成设计</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <h3 class="timeline-title">设计心理学</h3>
+          <p>探讨人类心理与设计之间的关系，研究用户体验和行为模式。</p>
+          <div class="course-preview">
+            <img src="./images/design-psychology.jpg" alt="设计心理学" />
+            <div class="preview-caption">用户行为研究与情感设计分析</div>
+          </div>
+          <div class="course-details">
+            <h4>课程信息</h4>
+            <p><strong>授课时间：</strong>大二上学期</p>
+            <p><strong>课程学分：</strong>3学分</p>
+            <p>
+              <strong>课程目标：</strong
+              >掌握设计心理学基本理论，培养以用户为中心的设计思维。
+            </p>
+            <p><strong>主要内容：</strong></p>
+            <ul>
+              <li>认知心理学基础</li>
+              <li>用户行为分析</li>
+              <li>情感设计原理</li>
+              <li>用户研究方法</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <h3 class="timeline-title">设计思维与表达</h3>
+          <p>训练学生的创新思维能力，掌握设计表达技巧。</p>
+          <div class="course-preview">
+            <img src="./images/design-thinking.jpg" alt="设计思维与表达" />
+            <div class="preview-caption">学生创意设计展示与表达</div>
+          </div>
+          <div class="course-details">
+            <h4>课程信息</h4>
+            <p><strong>授课时间：</strong>大二下学期</p>
+            <p><strong>课程学分：</strong>3学分</p>
+            <p>
+              <strong>课程目标：</strong
+              >通过项目驱动的方式，培养学生的设计思维和表达能力，掌握多种设计表现手段。
+            </p>
+            <p><strong>主要内容：</strong></p>
+            <ul>
+              <li>设计思维流程</li>
+              <li>创意发散与收敛</li>
+              <li>设计故事板制作</li>
+              <li>计算机辅助设计软件应用</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <h3 class="timeline-title">人因工程与机器行为学</h3>
+          <p>研究人-机-环境系统的协调关系，优化产品使用体验。</p>
+          <div class="course-preview">
+            <img src="./images/ergonomics.jpg" alt="人因工程" />
+            <div class="preview-caption">人机交互设计与评估</div>
+          </div>
+          <div class="course-details">
+            <h4>课程信息</h4>
+            <p><strong>授课时间：</strong>大三上学期</p>
+            <p><strong>课程学分：</strong>3学分</p>
+            <p>
+              <strong>课程目标：</strong
+              >理解人因工程学的基本原理，掌握影响人机交互的关键因素，能够进行简单的人机交互设计。
+            </p>
+            <p><strong>主要内容：</strong></p>
+            <ul>
+              <li>人因工程学导论</li>
+              <li>人体测量学</li>
+              <li>工作环境与设备设计</li>
+              <li>人机交互界面设计</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <h3 class="timeline-title">产品形式与方式设计</h3>
+          <p>探索产品的形态语言和交互方式，创造创新性设计方案。</p>
+          <div class="course-preview">
+            <img src="./images/product-design.jpg" alt="产品形式设计" />
+            <div class="preview-caption">产品造型设计与原型制作</div>
+          </div>
+          <div class="course-details">
+            <h4>课程信息</h4>
+            <p><strong>授课时间：</strong>大三下学期</p>
+            <p><strong>课程学分：</strong>3学分</p>
+            <p>
+              <strong>课程目标：</strong
+              >掌握产品形态设计的基本方法，能够进行产品外观造型和交互方式的创新设计。
+            </p>
+            <p><strong>主要内容：</strong></p>
+            <ul>
+              <li>产品形态设计基础</li>
+              <li>设计语言与符号</li>
+              <li>用户体验与交互设计</li>
+              <li>设计方案评估与优化</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <h3 class="timeline-title">感知、通信与控制</h3>
+          <p>学习现代产品中的信息处理与交互技术。</p>
+          <div class="course-preview">
+            <img src="./images/interaction.jpg" alt="感知与交互" />
+            <div class="preview-caption">智能产品交互设计实践</div>
+          </div>
+          <div class="course-details">
+            <h4>课程信息</h4>
+            <p><strong>授课时间：</strong>大四上学期</p>
+            <p><strong>课程学分：</strong>3学分</p>
+            <p>
+              <strong>课程目标：</strong
+              >理解感知、通信与控制的基本概念，掌握智能产品设计中的信息处理与交互技术。
+            </p>
+            <p><strong>主要内容：</strong></p>
+            <ul>
+              <li>传感器原理与应用</li>
+              <li>嵌入式系统基础</li>
+              <li>无线通信技术</li>
+              <li>智能产品设计案例分析</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials">
+      <h2 class="section-title">师资力量</h2>
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <div class="professor-info">
+            <img
+              src="./images/teacher-1.jpg"
+              alt="张某某教授"
+              class="professor-avatar"
+            />
+            <div class="professor-details">
+              <h3>张某某</h3>
+              <p class="professor-title">教授、博士生导师</p>
+            </div>
+          </div>
+          <p>
+            "致力于产品创新设计理论与方法、用户体验设计、交互设计等领域的研究与教学。"
+          </p>
+        </div>
+        <div class="testimonial-card">
+          <div class="professor-info">
+            <img
+              src="./images/teacher-2.jpg"
+              alt="李某某教授"
+              class="professor-avatar"
+            />
+            <div class="professor-details">
+              <h3>李某某</h3>
+              <p class="professor-title">教授、博士生导师</p>
+            </div>
+          </div>
+          <p>"专注于工业设计方法论、智能产品设计、创新设计教育等研究方向。"</p>
+        </div>
+        <div class="testimonial-card">
+          <div class="professor-info">
+            <img
+              src="./images/teacher-3.jpg"
+              alt="王某某教授"
+              class="professor-avatar"
+            />
+            <div class="professor-details">
+              <h3>王某某</h3>
+              <p class="professor-title">副教授、硕士生导师</p>
+            </div>
+          </div>
+          <p>"研究方向包括人机交互设计、用户研究方法、智能产品创新设计等。"</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="resources">
+      <h2 class="section-title">推荐资源</h2>
+      <div class="resource-grid">
+        <div class="resource-card">
+          <h3>设计网站</h3>
+          <ul>
+            <li>
+              <a href="https://www.behance.net" target="_blank">Behance</a>
+            </li>
+            <li>
+              <a href="https://www.pinterest.com" target="_blank">Pinterest</a>
+            </li>
+            <li>
+              <a href="https://www.designboom.com" target="_blank"
+                >Designboom</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="resource-card">
+          <h3>设计工具</h3>
+          <ul>
+            <li>Rhinoceros 3D</li>
+            <li>Fusion 360</li>
+            <li>KeyShot</li>
+            <li>Adobe Creative Suite</li>
+          </ul>
+        </div>
+        <div class="resource-card">
+          <h3>学习资源</h3>
+          <ul>
+            <li>课程课件下载</li>
+            <li>设计案例库</li>
+            <li>历年优秀作品</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2025 浙江大学工业设计系</p>
+      <p>地址：浙江省杭州市西湖区余杭塘路866号</p>
+    </footer>
+
+    <script src="js/particles.js"></script>
+    <script>
+      // 初始化粒子效果
+      document.addEventListener("DOMContentLoaded", () => {
+        new ParticleNetwork("particles-canvas");
+      });
+
+      // 添加时间轴动画效果
+      document.addEventListener("DOMContentLoaded", function () {
+        const timelineItems = document.querySelectorAll(".timeline-item");
+
+        function isElementInViewport(el) {
+          const rect = el.getBoundingClientRect();
+          return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <=
+              (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <=
+              (window.innerWidth || document.documentElement.clientWidth)
+          );
+        }
+
+        function showVisibleItems() {
+          timelineItems.forEach((item) => {
+            if (isElementInViewport(item)) {
+              item.style.opacity = "1";
+              item.style.transform = "translateY(0)";
+            }
+          });
+        }
+
+        // 初始化时间轴项目样式
+        timelineItems.forEach((item) => {
+          item.style.opacity = "0";
+          item.style.transform = "translateY(20px)";
+          item.style.transition = "all 0.5s ease-out";
+        });
+
+        // 监听滚动事件
+        window.addEventListener("scroll", showVisibleItems);
+        // 初始加载时检查
+        showVisibleItems();
+      });
+
+      // 添加课程详情展开/收起功能
+      document.querySelectorAll(".timeline-content").forEach((content) => {
+        content.addEventListener("click", function () {
+          const details = this.querySelector(".course-details");
+          const wasActive = this.classList.contains("active");
+
+          // 先关闭所有其他展开的详情
+          document.querySelectorAll(".timeline-content").forEach((item) => {
+            item.classList.remove("active");
+            const otherDetails = item.querySelector(".course-details");
+            if (otherDetails) {
+              otherDetails.classList.remove("active");
+            }
+          });
+
+          // 如果当前项未展开，则展开它
+          if (!wasActive) {
+            this.classList.add("active");
+            if (details) {
+              details.classList.add("active");
+            }
+          }
+        });
+      });
+
+      // 滚动动画
+      const observerOptions = {
+        threshold: 0.2,
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll(".fade-in").forEach((element) => {
+        observer.observe(element);
+      });
+    </script>
+  </body>
+</html>

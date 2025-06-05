@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学生优秀作品展示 - 浙江大学工业设计系</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Microsoft YaHei", sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+
+        .header {
+            position: relative;
+            height: 50vh;
+            background: linear-gradient(135deg, rgba(30, 55, 153, 0.8) 0%, rgba(12, 36, 97, 0.8) 100%);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        #particles-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50vh;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        .header-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.4;
+            z-index: 0;
+        }
+
+        .works-grid {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .work-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .work-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .work-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .work-card:hover .work-image {
+            transform: scale(1.05);
+        }
+
+        .work-info {
+            padding: 1.5rem;
+        }
+
+        .work-info h3 {
+            color: #1e3799;
+            margin-bottom: 0.5rem;
+        }
+
+        .work-info p {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .work-meta {
+            display: flex;
+            justify-content: space-between;
+            color: #888;
+            font-size: 0.8rem;
+        }
+
+        .awards-section {
+            background: #e8f4f8;
+            padding: 4rem 2rem;
+            margin-top: 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            color: #1e3799;
+            margin-bottom: 3rem;
+            font-size: 2rem;
+        }
+
+        .awards-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .award-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .award-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #1e3799;
+        }
+
+        .back-button {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: #1e3799;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-size: 1rem;
+            z-index: 10;
+        }
+
+        .back-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            .works-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <canvas id="particles-canvas"></canvas>
+    <header class="header">
+        <img src="./images/works-header.jpg" alt="学生作品展示" class="header-bg">
+        <div class="header-content">
+            <h1>学生优秀作品展示</h1>
+            <p>展现浙大工业设计系学子的创新力量</p>
+        </div>
+    </header>
+
+    <section class="works-grid">
+        <div class="work-card">
+            <img src="./images/work1.jpg" alt="智能交互设计" class="work-image">
+            <div class="work-info">
+                <h3>智能家居交互系统</h3>
+                <p>基于用户行为分析的智能家居控制系统，融合语音识别与手势交互技术。</p>
+                <div class="work-meta">
+                    <span>设计者：张同学</span>
+                    <span>2024年度</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="work-card">
+            <img src="./images/work2.jpg" alt="可持续设计" class="work-image">
+            <div class="work-info">
+                <h3>环保材料家具系列</h3>
+                <p>使用可回收材料设计的模块化家具，既美观又环保。</p>
+                <div class="work-meta">
+                    <span>设计者：李同学</span>
+                    <span>2024年度</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="work-card">
+            <img src="./images/work3.jpg" alt="医疗设计" class="work-image">
+            <div class="work-info">
+                <h3>便携式医疗监护设备</h3>
+                <p>为老年人设计的智能健康监测装置，操作简单，功能完善。</p>
+                <div class="work-meta">
+                    <span>设计者：王同学</span>
+                    <span>2024年度</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="awards-section">
+        <h2 class="section-title">获奖荣誉</h2>
+        <div class="awards-grid">
+            <div class="award-card">
+                <div class="award-icon">🏆</div>
+                <h3>红点设计大奖</h3>
+                <p>2024年度产品设计奖</p>
+            </div>
+            <div class="award-card">
+                <div class="award-icon">🌟</div>
+                <h3>IF设计奖</h3>
+                <p>2024年度概念设计奖</p>
+            </div>
+            <div class="award-card">
+                <div class="award-icon">🎨</div>
+                <h3>中国好设计奖</h3>
+                <p>2024年度金奖</p>
+            </div>
+        </div>
+    </section>
+
+    <a href="index.html" class="back-button">返回主页</a>
+
+    <script src="js/particles.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            new ParticleNetwork('particles-canvas');
+        });
+    </script>
+</body>
+</html>
